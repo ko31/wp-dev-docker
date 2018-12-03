@@ -19,6 +19,7 @@ services:
     depends_on:
       - db
     volumes:
+      - ./config/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ./wp-app:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db:3306
