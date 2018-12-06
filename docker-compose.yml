@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
-      - ./wp-data:/docker-entrypoint-initdb.d
+      - ./data:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress
@@ -19,9 +19,9 @@ services:
     depends_on:
       - db
     volumes:
-      - ./config/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      - ./wp-app:/var/www/html
-      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./config/php/php-ext.ini:/usr/local/etc/php/conf.d/php-ext.ini
+      - ./wordpress/www:/var/www/html
+      - ./wordpress/mu-plugins/wp-dev-docker-settings.php:/var/www/html/wp-content/mu-plugins/wp-dev-docker-settings.php
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
