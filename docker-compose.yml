@@ -21,6 +21,7 @@ services:
     volumes:
       - ./config/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ./wp-app:/var/www/html
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
