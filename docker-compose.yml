@@ -7,10 +7,10 @@ services:
       - db_data:/var/lib/mysql
       - ./data:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_ROOT_PASSWORD: wordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
 
   wordpress:
     image: wordpress:latest
@@ -24,8 +24,8 @@ services:
       - ./wordpress/mu-plugins/wp-dev-docker-settings.php:/var/www/html/wp-content/mu-plugins/wp-dev-docker-settings.php
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: "${DB_NAME}"
+      WORDPRESS_DB_PASSWORD: "${DB_PASSWORD}"
 
   mailcatcher:
     image: schickling/mailcatcher
