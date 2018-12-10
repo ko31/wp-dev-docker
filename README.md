@@ -9,7 +9,11 @@ This is a Wordpress development environment with Docker and Docker Compose.
 1. `docker-compose up -d`
 1. Visit WordPress in your browser `http://localhost:8000`
 
-## Commands
+## Usage
+
+Create containers.
+
+`docker-compose up -d`
 
 Start containers.
 
@@ -36,3 +40,13 @@ Shutdown and cleanup containers.
 ### Adminer
 
 `http://localhost:8080`
+
+## Shell commands
+
+Login to WordPress container.
+
+`./bin/shell.sh`
+
+Create database dump.
+
+`./bin/export.sh`
