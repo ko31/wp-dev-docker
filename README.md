@@ -43,9 +43,18 @@ Shutdown and cleanup containers.
 
 ## Shell commands
 
-Login to WordPress container.
+SSH into WordPress container.
 
 `./bin/shell.sh`
+
+Call WP-CLI command.
+
+```
+./bin/wp.sh <command>
+
+# Display the WordPress version
+./bin/wp.sh core version
+```
 
 Create database dump.
 
