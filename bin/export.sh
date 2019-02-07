@@ -7,5 +7,5 @@ docker-compose run --rm db bash -c 'exec mysqldump -h db -u "$MYSQL_USER" -p"$MY
 HEAD=`head -1 $DUMP_FILE`
 if [[ $HEAD =~ Warning ]] ;
 then
-	sed -i -e '1,1d' $DUMP_FILE
+	sed -i '' -e '1,1d' $DUMP_FILE
 fi
