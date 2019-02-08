@@ -59,3 +59,7 @@ Call WP-CLI command.
 Create database dump.
 
 `./bin/export.sh`
+
+Import database dump.
+
+`./bin/import.sh`
